@@ -9,10 +9,12 @@ __email__ = 'sjoeboo@sjoeboo.com'
 
 logger = logging.getLogger('media-cli')
 
+
 def setup_logging():
     handler = logging.StreamHandler(sys.stdout)
     logger.addHandler(handler)
     logger.setLevel(logging.INFO)
+
 
 @click.group(help='Media Cli')
 @click.pass_context
