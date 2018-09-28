@@ -47,7 +47,7 @@ def install_requires():
 #####
 # Project-specific constants
 #####
-META_PATH = os.path.join('media-cli', '__init__.py')
+META_PATH = os.path.join('mcli', '__init__.py')
 META_FILE = read(META_PATH)
 
 setup(
@@ -69,6 +69,6 @@ setup(
     install_requires=install_requires(),
     entry_points='''
         [console_scripts]
-        mcli=media-cli:cli
+        mcli=mcli:cli
     '''
 )
