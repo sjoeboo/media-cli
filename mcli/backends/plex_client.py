@@ -3,6 +3,7 @@ import logging
 
 logger = logging.getLogger('media-cli')
 
+
 def get_server(plex_creds):
     logger.info("Logging into Plex...")
     account = MyPlexAccount(plex_creds['email'], plex_creds['password'])
@@ -10,7 +11,8 @@ def get_server(plex_creds):
     plex = account.resource(plex_creds['server']).connect()
     return plex
 
+
 def sync(plex_creds):
-    server=get_server(plex_creds)
+    server = get_server(plex_creds)
     logger.info("Triggered Plex Library Update")
     server.library.update()

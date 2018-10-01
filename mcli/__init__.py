@@ -7,7 +7,6 @@ from mcli.backends import plex_client
 from mcli.backends import sickbeard_client
 
 
-
 __version__ = '0.0.1'
 __description__ = 'Media Cli'
 __author__ = 'sjoeboo'
@@ -38,12 +37,11 @@ def cli(ctx, config_file):
     ctx.obj = {'config': config}
 
 
-
 @cli.command(name='plex', help='Do plex things')
 @click.option('--sync')
 @click.pass_obj
 def plex(ctx, sync):
-    plex_config=ctx['config']['services']['plex']
+    plex_config = ctx['config']['services']['plex']
     if sync:
         plex_client.sync(plex_config)
 
@@ -53,7 +51,7 @@ def plex(ctx, sync):
 @click.option('--history', is_flag=True)
 @click.pass_obj
 def sickbeard(ctx, upcoming, history):
-    sb_config=ctx['config']['services']['sickbeard']
+    sb_config = ctx['config']['services']['sickbeard']
     if upcoming:
         sickbeard_client.upcoming(sb_config)
     elif history:
